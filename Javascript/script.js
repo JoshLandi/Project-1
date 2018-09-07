@@ -14,10 +14,8 @@ $.ajax({
     console.log(wQueryURL);
     console.log(response);
 
-//Getting Weather Icon
-var wIconCode = response.weather[0].icon;
-console.log(wIconCode);
-var iconUrl = "http://openweathermap.org/img/w/" + wIconCode + ".png";
+//Showing City Chosen
+$("#city").html(currentCity);
     
 //Showing temp
     var currentTemp = response.main.temp;
@@ -28,10 +26,14 @@ var iconUrl = "http://openweathermap.org/img/w/" + wIconCode + ".png";
 //Showing Humidity
     var currentHumidity = response.main.humidity;
     var showResults2 = $("<p>");
-    showResults2.append(currentHumidity + "%");
+    showResults2.append(currentHumidity + " %");
     $("#humidityH").append(showResults2);
 
+//Getting Weather Icon
+    var wIconCode = response.weather[0].icon;
+    console.log(wIconCode);
+    var iconUrl = "http://openweathermap.org/img/w/" + wIconCode + ".png";
 //Displaying weather icon
-$(".icon").html("<img src='" + iconUrl  + "' alt='Icon Showing Current Weather'>");
+    $(".icon").html("<img src='" + iconUrl  + "' alt='Icon Showing Current Weather'>");
 
 });
