@@ -1,0 +1,39 @@
+html, body {
+	height:100%;
+	width:100%;
+}
+
+
+/*Navbar Stoooof */
+.navbar {
+	background-color: #23415C;
+	padding: .5% 0;
+	font-size: 1.2em;
+}
+
+.navbar-brand {
+	min-height:55px;
+	padding:0 15px 5px;
+}
+
+.navbar-default .navbar-nav li a {
+	color: #D5D5D5;
+}
+.navbar-default .navbar-nav li a:hover, .navbar-default .navbar-nav li a.active{
+	color: #FFF;
+}
+
+
+/* this is API Content */
+.content {
+    padding: 80px 0;
+    background-color: blanchedalmond;
+    margin: 90px 20px 20px 20px;
+}
+
+
+/* Container Below API's */
+.content2 {
+    padding: 80px 0;
+    background-color: aqua;
+}
