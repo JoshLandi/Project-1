@@ -37,3 +37,36 @@ html, body {
     padding: 80px 0;
     background-color: aqua;
 }
+
+
+/* Footer */
+footer {
+	width: 100%;
+	background-color: #23415C;
+	color: #ffff;
+}
+
+/* Footer Goodies */
+.fa, h3{
+	padding: 15px;
+	font-size: 25px;
+	color:#FFF;
+	vertical-align: center;
+	text-align: center;
+}
+
+
+/*Responsive stooooof */
+@media (max-eidth: 768px) {
+	.landing-text h1{
+		font-size: 300%;
+	}
+	.fa {
+		font-size: 20px;
+		padding: 10px;
+	}
+	.icon{
+		padding-top: 5%;
+		max-width: 100px;
+	}
+}
