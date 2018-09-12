@@ -1,4 +1,6 @@
-var currentZip = "85756";
+var currentZip = "91003";
+
+
 //Function for looking up a different zip
 function zipLookUp () {
     currentZip = $("#zip-input").val().trim();
@@ -56,6 +58,7 @@ $("#city").html(currentCity + "<img src='" + iconUrl  + "' alt='Icon Showing Cur
 
 //Advice Conditionals
     var advice = $("#adviceP");
+    var weatherStatus = response.weather[0].main;
 
     var adviceObject = {
         hotSunny : {
@@ -67,17 +70,63 @@ $("#city").html(currentCity + "<img src='" + iconUrl  + "' alt='Icon Showing Cur
             m: "It's hot but rainy!",
             do: "<br /> Bring an umbrella!",
             dont: "<br /> Dress light but waterproof!"
+        },
+        temperateSunny : {
+            m: "It's nice out!",
+            do: "<br /> Wear what you want!",
+            dont: "<br /> Don't worry about it!"
+        },
+        temperateRainy : {
+            m: "It's nice but rainy.",
+            do: "<br /> Bring an umbrella!",
+            dont: "<br /> Don't get too wet!"
+        },
+
+        coldSunny : {
+            m: "It's Cold!",
+            do: "<br /> Wear a jacket!",
+            dont: "<br /> Dress too lightly."
+        },
+
+        coldRainy : {
+            m: "It's cold and wet!",
+            do: "<br /> Wear a coat!",
+            dont: "<br /> Forget your umbrella!"
         }
     }
-    if (currentTemp > 90 && response.weather[0].main !== "Rain") {
+    if (currentTemp > 90 && weatherStatus !== "Rain") {
         advice.append(adviceObject.hotSunny.m);
         advice.append(adviceObject.hotSunny.do);
         advice.append(adviceObject.hotSunny.dont);
     }
-    else {
+
+    if (currentTemp > 90 && weatherStatus === "Rain") {
         advice.append(adviceObject.hotRainy.m);
         advice.append(adviceObject.hotRainy.do);
         advice.append(adviceObject.hotRainy.dont);
     }
 
+    if (currentTemp < 90 && currentTemp > 50 && weatherStatus !== "Rain") {
+        advice.append(adviceObject.temperateSunny.m);
+        advice.append(adviceObject.temperateSunny.do);
+        advice.append(adviceObject.temperateSunny.dont);
+    }
+
+    if (currentTemp < 90 && currentTemp > 50 && weatherStatus === "Rain") {
+        advice.append(adviceObject.temperateRainy.m);
+        advice.append(adviceObject.temperateRainy.do);
+        advice.append(adviceObject.temperateRainy.dont);
+    }
+
+    if (currentTemp < 50 && weatherStatus !== "Rain") {
+        advice.append(adviceObject.coldSunny.m);
+        advice.append(adviceObject.coldSunny.do);
+        advice.append(adviceObject.coldSunny.dont);
+    }
+
+    if (currentTemp < 50 && weatherStatus === "Rain") {
+        advice.append(adviceObject.coldRainy.m);
+        advice.append(adviceObject.coldRainy.do);
+        advice.append(adviceObject.coldRainy.dont);
+    }
 });
