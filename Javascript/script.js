@@ -123,8 +123,65 @@ if(currentZip && currentZip.length === 5 && parseInt(currentZip)) {
             advice.append(adviceObject.coldRainy.do);
             advice.append(adviceObject.coldRainy.dont);
         }
+
+        else {
+            //display "not zip"
+            advice.append("Not a valid zip code.")
+        }
+
+        //UV index code
+        //curl -X GET 
+var lat = response.coord.lat;
+var lon = response.coord.lon;
+var uvQueryURL = "https://api.openuv.io/api/v1/uv?lat=" + lat + "&lng=" + lon + " ";
+
+
+console.log(uvQueryURL);
+
+//AJAX call to OPENUV
+$.ajax({
+    url: uvQueryURL,
+    method: "GET",
+    headers: {
+        "x-access-token": "c9d549ae48d1515c37eb389bc7027479"
+    }
+  })
+
+  .then(function(response2) {
+
+    
+    console.log(response2); 
+
+    //Showing UV Index
+    var uv = response2.result.uv;
+    var showResults3 = $("#uv");
+    showResults3.append(uv);
+
+    var safeExposure1 = response2.result.safe_exposure_time.st1;
+    var safeExposure2 = response2.result.safe_exposure_time.st2;
+    var safeExposure3 = response2.result.safe_exposure_time.st3;
+    var safeExposure4 = response2.result.safe_exposure_time.st4;
+    var safeExposure5 = response2.result.safe_exposure_time.st5;
+    var safeExposure6 = response2.result.safe_exposure_time.st6;
+
+    var sunResults1 = $("#time1");
+    var sunResults2 = $("#time2");
+    var sunResults3 = $("#time3");
+    var sunResults4 = $("#time4");
+    var sunResults5 = $("#time5");
+    var sunResults6 = $("#time6");
+
+    sunResults1.append(safeExposure1);
+    sunResults2.append(safeExposure2);
+    sunResults3.append(safeExposure3);
+    sunResults4.append(safeExposure4);
+    sunResults5.append(safeExposure5);
+    sunResults6.append(safeExposure6);
+    
+    //Show 
+    
+
+  }); 
     });
 
-} else {
-    //display "not zip"
-}
+} 
