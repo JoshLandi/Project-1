@@ -38,6 +38,11 @@ if(currentZip && currentZip.length === 5 && parseInt(currentZip)) {
 
     //Showing City Chosen and Weather Icon
     $("#city").html(currentCity + "<img src='" + iconUrl  + "' alt='Icon Showing Current Weather'>");
+
+    //Showing weather description
+    var weatherDescription = response.weather[0].description;
+    var showResults4 = $("#weatherD");
+    showResults4.append(" " + weatherDescription);
         
     //Showing temp
         var currentTemp = response.main.temp;
@@ -50,75 +55,102 @@ if(currentZip && currentZip.length === 5 && parseInt(currentZip)) {
         showResults2.append(" " + currentHumidity + " %");
 
 
-    //Advice Conditionals
+    //Advice Conditionals Object
         var advice = $("#adviceP");
         var weatherStatus = response.weather[0].main;
 
         var adviceObject = {
-            hotSunny : {
-                m: "It's hot!",
-                do: "<br /> Bring water!",
+            hotSunnyHumid : {
+                m: "<br /> It's hot and humid!",
+                do: "<br /> Bring water! (and maybe deodorant)",
                 dont: "<br /> Don't dress heavy!"
             },
+
+            hotSunnyNotHumid : {
+                m: "<br /> It's hot and dry!",
+                do: "<br /> Bring water and use sunscreen.",
+                dont: "<br /> Don't stay too long in the sun."
+            },
+
             hotRainy : {
-                m: "It's hot but rainy!",
+                m: "<br /> It's hot but rainy!",
                 do: "<br /> Bring an umbrella!",
                 dont: "<br /> Dress light but waterproof!"
             },
-            temperateSunny : {
-                m: "It's nice out!",
-                do: "<br /> Wear what you want!",
-                dont: "<br /> Don't worry about it!"
+
+            temperateSunnyHumid : {
+                m: "<br /> It's nice out but humid.",
+                do: "<br /> Wear what you want but stay hydrated.",
+                dont: "<br /> It's a perfect day to go outside!"
             },
+
+            temperateSunnyNotHumid : {
+                m: "<br /> It's nice and dry out!",
+                do: "<br /> Enjoy the day, but always bring water.",
+                dont: "<br /> Don't forget sunscreen!"
+            },
+
             temperateRainy : {
-                m: "It's nice but rainy.",
+                m: "<br /> It's temperate but rainy.",
                 do: "<br /> Bring an umbrella!",
                 dont: "<br /> Don't get too wet!"
             },
 
             coldSunny : {
-                m: "It's Cold!",
+                m: "<br /> It's Cold!",
                 do: "<br /> Wear a jacket!",
-                dont: "<br /> Dress too lightly."
+                dont: "<br /> Don't dress too lightly."
             },
 
             coldRainy : {
-                m: "It's cold and wet!",
+                m: "<br /> It's cold and wet!",
                 do: "<br /> Wear a coat!",
-                dont: "<br /> Forget your umbrella!"
+                dont: "<br /> Don't forget your umbrella!"
             }
         }
-        if (currentTemp > 90 && weatherStatus !== "Rain") {
-            advice.append(adviceObject.hotSunny.m);
-            advice.append(adviceObject.hotSunny.do);
-            advice.append(adviceObject.hotSunny.dont);
+        if (currentTemp > 90 && weatherStatus !== "Rain" && currentHumidity > 50) {
+            advice.append(adviceObject.hotSunnyHumid.m);
+            advice.append(adviceObject.hotSunnyHumid.do);
+            advice.append(adviceObject.hotSunnyHumid.dont);
         }
 
-        if (currentTemp > 90 && weatherStatus === "Rain") {
+        else if (currentTemp > 90 && weatherStatus !== "Rain" && currentHumidity < 50) {
+            advice.append(adviceObject.hotSunnyNotHumid.m);
+            advice.append(adviceObject.hotSunnyNotHumid.do);
+            advice.append(adviceObject.hotSunnyNotHumid.dont);
+        }
+
+        else if (currentTemp > 90 && weatherStatus === "Rain") {
             advice.append(adviceObject.hotRainy.m);
             advice.append(adviceObject.hotRainy.do);
             advice.append(adviceObject.hotRainy.dont);
         }
 
-        if (currentTemp < 90 && currentTemp > 50 && weatherStatus !== "Rain") {
-            advice.append(adviceObject.temperateSunny.m);
-            advice.append(adviceObject.temperateSunny.do);
-            advice.append(adviceObject.temperateSunny.dont);
+        else if (currentTemp < 90 && currentTemp > 50 && weatherStatus !== "Rain" && currentHumidity > 50) {
+            advice.append(adviceObject.temperateSunnyHumid.m);
+            advice.append(adviceObject.temperateSunnyHumid.do);
+            advice.append(adviceObject.temperateSunnyHumid.dont);
         }
 
-        if (currentTemp < 90 && currentTemp > 50 && weatherStatus === "Rain") {
+        else if (currentTemp < 90 && currentTemp > 50 && weatherStatus !== "Rain" && currentHumidity < 50) {
+            advice.append(adviceObject.temperateSunnyNotHumid.m);
+            advice.append(adviceObject.temperateSunnyNotHumid.do);
+            advice.append(adviceObject.temperateSunnyNotHumid.dont);
+        }
+
+        else if (currentTemp < 90 && currentTemp > 50 && weatherStatus === "Rain") {
             advice.append(adviceObject.temperateRainy.m);
             advice.append(adviceObject.temperateRainy.do);
             advice.append(adviceObject.temperateRainy.dont);
         }
 
-        if (currentTemp < 50 && weatherStatus !== "Rain") {
+        else if (currentTemp < 50 && weatherStatus !== "Rain") {
             advice.append(adviceObject.coldSunny.m);
             advice.append(adviceObject.coldSunny.do);
             advice.append(adviceObject.coldSunny.dont);
         }
 
-        if (currentTemp < 50 && weatherStatus === "Rain") {
+        else if (currentTemp < 50 && weatherStatus === "Rain") {
             advice.append(adviceObject.coldRainy.m);
             advice.append(adviceObject.coldRainy.do);
             advice.append(adviceObject.coldRainy.dont);
