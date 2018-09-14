@@ -69,29 +69,29 @@ if(currentZip && currentZip.length === 5 && parseInt(currentZip)) {
             hotSunnyNotHumid : {
                 m: "<br /> It's hot and dry!",
                 do: "<br /> Bring water and use sunscreen.",
-                dont: "<br /> Don't stay too long in the sun."
+                dont: "<br /> Don't stay in the sun for too long."
             },
 
             hotRainy : {
-                m: "<br /> It's hot but rainy!",
+                m: "<br /> It's hot, but rainy!",
                 do: "<br /> Bring an umbrella!",
                 dont: "<br /> Dress light but waterproof!"
             },
 
             temperateSunnyHumid : {
-                m: "<br /> It's nice out but humid.",
-                do: "<br /> Wear what you want but stay hydrated.",
+                m: "<br /> It's nice out, but humid.",
+                do: "<br /> Wear what you want, but stay hydrated.",
                 dont: "<br /> It's a perfect day to go outside!"
             },
 
             temperateSunnyNotHumid : {
                 m: "<br /> It's nice and dry out!",
                 do: "<br /> Enjoy the day, but always bring water.",
-                dont: "<br /> Don't forget sunscreen!"
+                dont: "<br /> Don't forget the sunscreen!"
             },
 
             temperateRainy : {
-                m: "<br /> It's temperate but rainy.",
+                m: "<br /> It's temperate, but rainy.",
                 do: "<br /> Bring an umbrella!",
                 dont: "<br /> Don't get too wet!"
             },
@@ -114,7 +114,7 @@ if(currentZip && currentZip.length === 5 && parseInt(currentZip)) {
             advice.append(adviceObject.hotSunnyHumid.dont);
         }
 
-        else if (currentTemp > 90 && weatherStatus !== "Rain" && currentHumidity < 50) {
+        else if (currentTemp > 90 && weatherStatus !== "Rain" && currentHumidity <= 50) {
             advice.append(adviceObject.hotSunnyNotHumid.m);
             advice.append(adviceObject.hotSunnyNotHumid.do);
             advice.append(adviceObject.hotSunnyNotHumid.dont);
@@ -126,31 +126,31 @@ if(currentZip && currentZip.length === 5 && parseInt(currentZip)) {
             advice.append(adviceObject.hotRainy.dont);
         }
 
-        else if (currentTemp < 90 && currentTemp > 50 && weatherStatus !== "Rain" && currentHumidity > 50) {
+        else if (currentTemp <= 90 && currentTemp > 50 && weatherStatus !== "Rain" && currentHumidity > 50) {
             advice.append(adviceObject.temperateSunnyHumid.m);
             advice.append(adviceObject.temperateSunnyHumid.do);
             advice.append(adviceObject.temperateSunnyHumid.dont);
         }
 
-        else if (currentTemp < 90 && currentTemp > 50 && weatherStatus !== "Rain" && currentHumidity < 50) {
+        else if (currentTemp <= 90 && currentTemp > 50 && weatherStatus !== "Rain" && currentHumidity <= 50) {
             advice.append(adviceObject.temperateSunnyNotHumid.m);
             advice.append(adviceObject.temperateSunnyNotHumid.do);
             advice.append(adviceObject.temperateSunnyNotHumid.dont);
         }
 
-        else if (currentTemp < 90 && currentTemp > 50 && weatherStatus === "Rain") {
+        else if (currentTemp <= 90 && currentTemp > 50 && weatherStatus === "Rain") {
             advice.append(adviceObject.temperateRainy.m);
             advice.append(adviceObject.temperateRainy.do);
             advice.append(adviceObject.temperateRainy.dont);
         }
 
-        else if (currentTemp < 50 && weatherStatus !== "Rain") {
+        else if (currentTemp <= 50 && weatherStatus !== "Rain") {
             advice.append(adviceObject.coldSunny.m);
             advice.append(adviceObject.coldSunny.do);
             advice.append(adviceObject.coldSunny.dont);
         }
 
-        else if (currentTemp < 50 && weatherStatus === "Rain") {
+        else if (currentTemp <= 50 && weatherStatus === "Rain") {
             advice.append(adviceObject.coldRainy.m);
             advice.append(adviceObject.coldRainy.do);
             advice.append(adviceObject.coldRainy.dont);
