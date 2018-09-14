@@ -140,7 +140,7 @@ $.ajax({
     url: uvQueryURL,
     method: "GET",
     headers: {
-        "x-access-token": "c9d549ae48d1515c37eb389bc7027479"
+        "x-access-token": "04e75b1fc50974e76213991b7d259dec"
     }
   })
 
