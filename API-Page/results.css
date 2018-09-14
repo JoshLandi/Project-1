@@ -84,7 +84,7 @@ h4 {
     padding: 20px 20px;
     background: #F1D1B1;
     width: 2px;
-    border-radius: 100%;
+    border-radius: 50%;
     width: 1%;
 }
 
@@ -136,4 +136,12 @@ th {
 /* color for city & uv titles */
 #city, #uv {
 color: #23415C;
+}
+
+#td1, #td2, #td3, #td4, #td5, #td6 {
+    text-align: center;
+}
+
+#td1 {
+    text-indent: 13px;
 }
