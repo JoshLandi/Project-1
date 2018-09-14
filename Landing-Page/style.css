@@ -24,7 +24,7 @@
 
 /*Background Home image */
 #home {
-	background: url(images/008.jpg) no-repeat center center fixed;
+	background: url(Images/008.jpg) no-repeat center center fixed;
 	display: table;
 	height:100%;
 	position: relative;
@@ -78,7 +78,7 @@
 
 /*This is about WE */
 #fixed {
-	background: url(images/maxresdefault.jpg) no-repeat center center fixed;
+	background: url(Images/maxresdefault.jpg) no-repeat center center fixed;
 	display: table;
 	height: 60%;
 	position: relative;
