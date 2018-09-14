@@ -8,7 +8,7 @@ $("#add-zip").on("click", function(evt) {
     evt.preventDefault();
 
     localStorage.setItem('zip', zipLookUp());
-    window.location = "/api-page/results.html";
+    window.location = "/API-page/results.html";
 });
 
 var currentZip = localStorage.getItem('zip');

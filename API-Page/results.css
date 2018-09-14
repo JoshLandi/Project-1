@@ -55,8 +55,14 @@ footer {
 	text-align: center;
 }
 
+/* weather & UV title id's */
+#uvT, #weaT {
+    font-size: 50px;
+}
+
 h4 {
-	color: black;
+    color: black;
+    font-size: 30px;
 }
 
 /*Responsive stooooof */
@@ -120,4 +126,14 @@ h4 {
     width: 2px;
     border-radius: 100%;
     width: 1%;
+}
+
+th {
+    text-align: left;
+    text-align: center;
+}
+
+/* color for city & uv titles */
+#city, #uv {
+color: #23415C;
 }
