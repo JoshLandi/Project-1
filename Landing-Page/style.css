@@ -24,7 +24,7 @@
 
 /*Background Home image */
 #home {
-	background: url(images/008.jpg) no-repeat center center fixed;
+	background: url(Images/008.jpg) no-repeat center center fixed;
 	display: table;
 	height:100%;
 	position: relative;
@@ -65,8 +65,9 @@
 }
 
 .h4, h4 {
-	color: #aaa9a970;
+	color: #010101e2;
 	text-shadow: 1px 1px 0px rgba(77, 77, 77, 0.604);
+	font-size: 2.5em;
 }
 
 .padding {
@@ -78,7 +79,7 @@
 
 /*This is about WE */
 #fixed {
-	background: url(images/maxresdefault.jpg) no-repeat center center fixed;
+	background: url(Images/maxresdefault.jpg) no-repeat center center fixed;
 	display: table;
 	height: 60%;
 	position: relative;

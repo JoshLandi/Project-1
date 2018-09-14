@@ -8,14 +8,14 @@ $("#add-zip").on("click", function(evt) {
     evt.preventDefault();
 
     localStorage.setItem('zip', zipLookUp());
-    window.location = "/API-page/results.html";
+    window.location = "API-Page/results.html";
 });
 
 var currentZip = localStorage.getItem('zip');
 
 if(currentZip && currentZip.length === 5 && parseInt(currentZip)) {
     //Variables for OWM AJAX call (converted Kelvin to Imperial units)
-    var wQueryURL = "http://api.openweathermap.org/data/2.5/weather?zip=" + currentZip + 
+    var wQueryURL = "https://api.openweathermap.org/data/2.5/weather?zip=" + currentZip + 
                     ",us&units=imperial&APPID=a13dc362eeacbccc63e8cbc432ab2eb5";
 
     //AJAX call to OpenWeatherMap
@@ -122,12 +122,9 @@ if(currentZip && currentZip.length === 5 && parseInt(currentZip)) {
             advice.append(adviceObject.coldRainy.m);
             advice.append(adviceObject.coldRainy.do);
             advice.append(adviceObject.coldRainy.dont);
-        }
+        };
+    
 
-        else {
-            //display "not zip"
-            advice.append("Not a valid zip code.")
-        }
 
         //UV index code
         //curl -X GET 
@@ -181,7 +178,12 @@ $.ajax({
     //Show 
     
 
-  }); 
+}); 
+
     });
 
-} 
+}
+else {
+    //display "not zip"
+    advice.append("Not a valid zip code.")
+}
