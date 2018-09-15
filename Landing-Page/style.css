@@ -72,7 +72,7 @@
 }
 
 .h4, h4 {
-	color: #010101e2;
+	color: #ffffff;
 	text-shadow: 1px 1px 0px rgba(77, 77, 77, 0.604);
 	font-size: 2.5em;
 }
@@ -161,3 +161,4 @@ box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.5);
 	color: rgb(80, 255, 89);
 	text-shadow: 1.5px 1.5px 0px rgba(138, 138, 138, 0.522);
 }
+
