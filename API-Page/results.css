@@ -26,6 +26,7 @@ html, body {
 
 .content {
     background-image: url(https://image.freepik.com/free-vector/blue-watercolor-background_1035-3440.jpg);
+    opacity: 90%;
     background-size: cover;
     background-position: center center;
     position: relative;
