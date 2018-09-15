@@ -6,9 +6,10 @@ html, body {
 
 /*Navbar Stoooof */
 .navbar {
-	background-color: #23415C;
+	background-color: rgba(0, 64, 148, 0.541);
 	padding: .5% 0;
-	font-size: 1.2em;
+    font-size: 1.2em;
+    font-family: 'Merienda', cursive;
 }
 
 .navbar-brand {
@@ -23,27 +24,59 @@ html, body {
 	color: #FFF;
 }
 
+.content {
+    background-image: url(https://image.freepik.com/free-vector/blue-watercolor-background_1035-3440.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+	z-index: -10;
+	;
+}
 
-/* this is API Content */
+.content {
+    font-family: 'Merienda', cursive;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    color: aliceblue;
+    margin: 90px 20px 20px 20px;
+    padding: 80px 0;
+
+}
+
+
+.content2 {
+    font-family: 'Merienda', cursive;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    color:black;
+    padding: 80px 0;
+
+
+
+}
+
+/* this is API Content 
 .content {
     padding: 80px 0;
     background-color: blanchedalmond;
     margin: 90px 20px 20px 20px;
-}
+}*/
 
 
-/* Container Below API's */
+/* Container Below API's 
 .content2 {
     padding: 80px 0;
     background-color: aqua;
-}
+}*/
 
 
 /* Footer */
 footer {
 	width: 100%;
-	background-color: #23415C;
-	color: #ffff;
+	background-color: rgba(0, 64, 148, 0.541);
+    color: #ffff;
+    font-family: 'Merienda', cursive;
 }
 
 /* Footer Goodies */
@@ -81,10 +114,10 @@ h4 {
 }
 
 #skin1  {
-    padding: 20px 20px;
+    padding: .2px .2px;
     background: #F1D1B1;
-    width: 2px;
-    border-radius: 50%;
+    width: .2px;
+    border-radius: 100%;
     width: 1%;
 }
 
