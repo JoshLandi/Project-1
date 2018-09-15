@@ -1,4 +1,3 @@
-
 <html lang="en">
 
 <head>
@@ -10,204 +9,278 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="results.css" rel="stylesheet">
-    
+
     <title>Al Fresco</title>
 </head>
 
 <body>
 
     <!-- navBar -->
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
-                <span class="sr-only">Toggle Navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="../index.html">
-                <img src="../Landing-Page/Images/Al-Fresco-Logo.png" height="60px" width="180px">
-            </a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="navbar-collapse-main">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a class="active">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-
-<!-- API's are going here -->
-<div class="content">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 text-center">
-                <h2 id="weaT">Weather:</h2> <br>
-                <h4 id="city"></h3> <br>
-                    <br>
-                <h4 id="tempH"><u>Temp</u>:</h3> <br>
-                    <br>
-                <h4 id="weatherD" class="text-capitalize"><u>Description</u>:</h4>
-                <br />
-                    <br>
-                <h4 id="humidityH"><u>Humidity</u>:   </h3> <br>
-                    <br>
-                    <br>
-                <h4 id="adviceP"><u>Advice</u>:</h3> <br>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../Landing-Page/Images/Al-Fresco-Logo.png" height="60px" width="180px">
+                </a>
             </div>
-            
-            <div class="col-sm-6 text-center">
-                <h2 id="uvT">UV Rating:</h2>
-                <br>
-                <div id="uvIndexDiv">
+
+            <div class="collapse navbar-collapse" id="navbar-collapse-main">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="active">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- API's are going here -->
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                    <h2 id="weaT">Weather:</h2>
+                    <br>
+                    <h4 id="city">
+                        </h3>
+                        <br>
+                        <br>
+                        <h4 id="tempH">
+                            <u>Temp</u>:</h3>
+                            <br>
+                            <br>
+                            <h4 id="weatherD" class="text-capitalize">
+                                <u>Description</u>:</h4>
+                            <br />
+                            <br>
+                            <h4 id="humidityH">
+                                <u>Humidity</u>: </h3>
+                                <br>
+                                <br>
+                                <br>
+                                <h4 id="adviceP">
+                                    <u>Advice</u>:</h3>
+                                    <br>
+                </div>
+
+                <div class="col-sm-6 text-center">
+                    <h2 id="uvT">UV Rating:</h2>
+                    <br>
+                    <div id="uvIndexDiv">
                         <h4 id="uv">UV:</h4>
-            
+
                         <!--Table for Skin-->
-                        
-                            <table class="table">
-                                    <thead class="thead-light">
-         
-                                        <tr>
-                                            <div class="row" id="row">
-                                                <th scope="col">Color</th>
-                                                <th scope="col">Skin Type</th>
-                                                <th scope="col">Typical Features</th>
-                                                <th scope="col">Time to Burn (mins)</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- <div class="w-100"></div> -->
-                                        <tr>
-                                            <th scope="row">1</th>
-         
-                                            <td id="skin1"></td>
-                                            <td id="td1">Fair skin, white; red or blond hair; light-colored eyes; freckles likely</td>
-                                            <td id="time1"></td>
-         
-                                        </tr>
-                                        <!--<div class="w-100"></div>-->
-                                        <tr>
-                                            <th scope="row">2</th>
-         
-                                            <td id="skin2"></td>
-                                            <td id="td2">Fair skin, white; light eyes; light hair</td>
-                                            <td id="time2"></td>
-                                            <!--    <div class="w-100"></div>-->
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-         
-                                            <td id="skin3"></td>
-                                            <td id="td3">Fair skin, cream white; any eye or hair color (very common skin type)</td>
-                                            <td id="time3"></td>
-                                            <!--        <div class="w-100"></div> -->
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">4</th>
-         
-                                            <td id="skin4"></td>
-                                            <td id="td4">Olive skin, typical Mediterranean Caucasian skin; dark brown hair; medium to heavy
-                                                pigmentation</td>
-                                            <td id="time4"></td>
-                                            <!--            <div class="w-100"></div> -->
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">5</th>
-         
-                                            <td id="skin5"></td>
-                                            <td id="td5">Brown skin, typical Middle Eastern skin; dark hair; rarely sun sensitive</td>
-                                            <td id="time5"></td>
-                                            <!--                <div class="w-100"></div> -->
-                                        </tr>
-         
-                                        <tr>
-                                            <th scope="row">6</th>
-         
-                                            <td id="skin6"></td>
-                                            <td id="td6">Black skin; rarely sun sensitive</td>
-                                            <td id="time6"></td>
-         
-                                        </tr>
-                                        <!--                    <div class="w-100"></div> -->
-         </tbody>
-         
-                                </table>
-            
+
+                        <table class="table">
+                            <thead class="thead-light">
+
+                                <tr>
+                                    <div class="row" id="row">
+                                        <th scope="col">Color</th>
+                                        <th scope="col">Skin Type</th>
+                                        <th scope="col">Typical Features</th>
+                                        <th scope="col">Time to Burn (mins)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- <div class="w-100"></div> -->
+                                <tr>
+                                    <th scope="row">1</th>
+
+                                    <td id="skin1"></td>
+                                    <td id="td1">Fair skin, white; red or blond hair; light-colored eyes; freckles likely</td>
+                                    <td id="time1"></td>
+
+                                </tr>
+                                <!--<div class="w-100"></div>-->
+                                <tr>
+                                    <th scope="row">2</th>
+
+                                    <td id="skin2"></td>
+                                    <td id="td2">Fair skin, white; light eyes; light hair</td>
+                                    <td id="time2"></td>
+                                    <!--    <div class="w-100"></div>-->
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+
+                                    <td id="skin3"></td>
+                                    <td id="td3">Fair skin, cream white; any eye or hair color (very common skin type)</td>
+                                    <td id="time3"></td>
+                                    <!--        <div class="w-100"></div> -->
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+
+                                    <td id="skin4"></td>
+                                    <td id="td4">Olive skin, typical Mediterranean Caucasian skin; dark brown hair; medium to heavy pigmentation
+                                    </td>
+                                    <td id="time4"></td>
+                                    <!--            <div class="w-100"></div> -->
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+
+                                    <td id="skin5"></td>
+                                    <td id="td5">Brown skin, typical Middle Eastern skin; dark hair; rarely sun sensitive</td>
+                                    <td id="time5"></td>
+                                    <!--                <div class="w-100"></div> -->
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">6</th>
+
+                                    <td id="skin6"></td>
+                                    <td id="td6">Black skin; rarely sun sensitive</td>
+                                    <td id="time6"></td>
+
+                                </tr>
+                                <!--                    <div class="w-100"></div> -->
+                            </tbody>
+
+                        </table>
+
                         </div>
-            
-            
-            
+
+
+
                     </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-3 col-sm-6 coll-xs-12"></div>
-        
-            <div class="col-lg-3 col-md-3 col-sm-6 coll-xs-12"> </div>
+    <div class="padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-6 coll-xs-12"></div>
+
+                <div class="col-lg-3 col-md-3 col-sm-6 coll-xs-12"> </div>
+            </div>
         </div>
     </div>
-</div>
 
 
     <!-- Another container. Maybe info???-->
-<div class="content2">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 text-center">
-                <h2>Weather info and how we got it:</h2>
-                <p class="lead">Weather! It's outside. It's close and personal and yet, so elusive. Our advice is based on our rudimentary knowledge of weather conditions and what we do when we experience them.</p>
-                <p class="lead">We are not experts in this regard, and if we had more time (or funding) we would hash out the details of this part of the project and make it utlra-acurate. However, this is not the case! So, our best guesses is what you get!
-                    All weather data is provided by the OpenWeatherMap API. Thanks to those folks!
-                </p>
+    <div class="content2">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                    <h2>
+                        <strong>How we obtained our Weather and UV data in real time:</strong>
+                    </h2>
+                    <p class="lead">Weather! It's outside. It's close and personal and yet, so elusive. Our advice is based on our rudimentary
+                        knowledge of weather conditions and what we do when we experience them.</p>
+                    <p class="lead">We are not experts in this regard, and if we had more time (or funding) we would hash out the details
+                        of this part of the project and make it utlra-acurate. However, this is not the case! So, our best
+                        guesses is what you get! All weather data is provided by the OpenWeatherMap API. Thanks to those
+                        folks!
+                    </p>
+                    <p class="lead">All of our UV index data is provided by the OpenUV API. Thanks to those folks for all UV information,
+                        and suncreen application data based on skin type. We couldn't have made this without you!</p>
+                </div>
+
+                <div class="col-sm-6 text-center">
+                    <table class="table">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <thead class="thead-light">
+
+                            <tr>
+                                <div class="row" id="row">
+                                    <th scope="col">UV Rating</th>
+                                    <th scope="col">Risk</th>
+                                    <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tbody">
+                            <tr>
+                                <th scope="row">2 or Less</th>
+
+                                <th id="risk1">Low</th>
+                                <th id="td11">Wear sunglasses.</th>
+                            </tr>
+                            <tr>
+                                <th scope="row">3-5</th>
+
+                                <th id="risk2">Moderate</th>
+                                <th id="td22">Stay in shade near midday when sun is strongest.</th>
+                            </tr>
+                            <tr>
+                                <th scope="row">6-7</th>
+
+                                <th id="risk3">High</th>
+                                <th id="td33">Apply sunscreen with SPF of 30 or higher. Protection against sunburn is needed!</th>
+                            </tr>
+                            <tr>
+                                <th scope="row">8-10</th>
+
+                                <th id="risk4">Very High</th>
+                                <th id="td44">Apply sunscreen with SPF of 30 or higher, liberally. Minimize sun exposure between 10am-4pm.
+                                    Wear protective clothing and sunglasses</th>
+                            </tr>
+                            <tr>
+                                <th scope="row">11+</th>
+
+                                <th id="risk5">Extreme</th>
+                                <th id="td55">Apply sunscreen with SPF of 30 or higher every 2 hours. Avoid sun exposure throughout the
+                                    day as much as possible. Take all precautions.</th>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Footer with contact info & maybe social media tags-->
+        <footer class="container-fluid text-center">
+            <div class="row">
+                <div class="col-sm-2">
+                    <h3></h3>
+                    <h4></h4>
+                </div>
+                <div class="col-sm-4">
+                    <h3>Contact Us</h3>
+                    <br>
+                    <h4>AlFresco@gmailaolyahoo.com</h4>
+                </div>
+                <div class="col-sm-4">
+                    <h3>Social Media</h3>
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                </div>
+                <div class="col-sm-4">
+                </div>
             </div>
 
-            <div class="col-sm-6 text-center">
-                <h2>UV info and how we came about it:</h2>
-                <p class="lead">The sun is sooooo powerful! Which makes sunscreen very, very necessary.</p>
-                <p class="lead">All of our UV index data is provided by the OpenUV API. Thanks to those folks for all UV information and sunscreen application data based on skin type. We couldn't have made this without you!</p>
-            </div>
-        </div>
-     </div>
-</div>
-
-
-
-<!-- Footer with contact info & maybe social media tags-->
-<footer class="container-fluid text-center">
-    <div class="row">
-        <div class="col-sm-2">
-            <h3></h3>
-            <h4></h4>
-        </div>
-        <div class="col-sm-4">
-            <h3>Contact Us</h3>
-            <br>
-            <h4>AlFresco@gmailaolyahoo.com</h4>
-        </div>
-        <div class="col-sm-4">
-            <h3>Social Media</h3>
-            <a href="#" class="fa fa-facebook"></a>
-            <a href="#" class="fa fa-twitter"></a>
-            <a href="#" class="fa fa-instagram"></a>
-            <a href="#" class="fa fa-youtube"></a>
-        </div>
-        <div class="col-sm-4">
-        </div>
-    </div>
-
-</footer>
-<script src="../Javascript/script.js" type="text/javascript"></script>
+        </footer>
+        <script src="../Javascript/script.js" type="text/javascript"></script>
 </body>
 
 </html>

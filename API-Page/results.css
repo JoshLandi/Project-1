@@ -143,6 +143,18 @@ color: #23415C;
     text-align: center;
 }
 
-#td1 {
-    text-indent: 13px;
+/* table alignment */
+#td11, #td22, #td33, #td44, #td55 {
+    text-align: center;
+    font-weight: normal;
+}
+
+#risk1, #risk2, #risk3, #risk4, #risk5 {
+    vertical-align: center;
+    font-weight: normal;
+    text-align: center;
+}
+
+#tbody {
+    vertical-align: center;
 }
